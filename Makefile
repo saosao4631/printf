@@ -1,5 +1,4 @@
-NAME		:= libft
-NAME_A		:=$(NAME).a
+NAME		:= libft.a
 
 CFLAGS		:= -Wall -Wextra -Werror
 CPPFLAGS	:= -I.
@@ -53,9 +52,9 @@ OUTDIR		:= .out
 OBJS		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
 AR			:= ar
 
-all: $(NAME_A)
+all: $(NAME)
 
-$(NAME_A): $(OBJS)
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OUTDIR)/%.o: %.c
@@ -66,7 +65,7 @@ clean:
 	$(RM) -r $(OUTDIR)
 
 fclean: clean
-	$(RM) $(NAME_A)
+	$(RM) $(NAME)
 
 re: fclean all
 

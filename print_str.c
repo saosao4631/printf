@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 13:37:20 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/03 19:42:17 by ksaotome         ###   ########.fr       */
+/*   Created: 2026/05/10 18:16:38 by ksaotome          #+#    #+#             */
+/*   Updated: 2026/05/10 18:18:04 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	print_str(char *s)
 {
-	size_t	len;
+	int	len;
 
+	len = 0;
 	if (!s)
-		return ;
-	len = ft_strlen(s);
-	write(fd, s, len);
+		return (write(1, "(null)", 6));
+	else
+	{
+		while (s[len])
+			len++;
+		return (write(1, s, len));
+	}
 }
-
-// int	main(void)
-// {
-// 	ft_putstr_fd("a", 1);
-// 	printf("\n");
-// 	ft_putstr_fd("abc", 1);
-// 	printf("\n");
-// 	ft_putstr_fd("", 1);
-// 	printf("\n");
-// 	ft_putstr_fd("a\nb           c", 1);
-// 	printf("\n");
-// 	ft_putstr_fd("a", 2);
-// }
