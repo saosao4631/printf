@@ -14,7 +14,7 @@
 
 int	print_str(char *s)
 {
-	int	len;
+	int len;
 
 	len = 0;
 	if (!s)
