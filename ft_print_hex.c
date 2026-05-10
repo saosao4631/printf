@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 18:16:38 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 19:24:08 by ksaotome         ###   ########.fr       */
+/*   Created: 2026/05/10 21:10:21 by ksaotome          #+#    #+#             */
+/*   Updated: 2026/05/10 21:11:03 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_strlen(const char *s)
+int	print_hex(unsigned int n, const char *base)
 {
-	int	len;
+	char	buf[8];
+	char	*pos;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
-int	print_str(char *s)
-{
-	if (!s)
-		return (putchar_byte("NULL", 4));
-	return (putchar_byte(s, ft_strlen(s)));
+	pos = &buf[8];
+	if (n == 0)
+		*(--pos) = '0';
+	while (n)
+	{
+		*(--pos) = base[n % 16];
+		n /= 16;
+	}
+	return (putchar_byte(pos, &buf[8] - pos));
 }

@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_ptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 18:16:38 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 19:24:08 by ksaotome         ###   ########.fr       */
+/*   Created: 2026/05/10 20:02:55 by ksaotome          #+#    #+#             */
+/*   Updated: 2026/05/10 21:01:37 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_strlen(const char *s)
+int	print_ptr(void *p)
 {
-	int	len;
+	char			buf[18];
+	char			*s;
+	unsigned long	address;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
-int	print_str(char *s)
-{
-	if (!s)
-		return (putchar_byte("NULL", 4));
-	return (putchar_byte(s, ft_strlen(s)));
+	if (!p)
+		return (putchar_byte("nil", 5));
+	address = (unsigned long)p;
+	s = &buf[18];
+	while (address)
+	{
+		s--;
+		*s = "0123456789abcdef"[address % 16];
+		address /= 16;
+	}
+	s--;
+	*s = 'x';
+	s--;
+	*s = '0';
+	return (putchar_byte(s, &buf[18] - s));
 }

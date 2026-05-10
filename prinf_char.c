@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 17:42:03 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 18:12:36 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/10 19:25:54 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	print_char(char c)
 {
-	if (write(1, &c, 1) == -1)
-		return (1);
-	return (-1);
+	return (putchar_byte(&c, 1));
 }

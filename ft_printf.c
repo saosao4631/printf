@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:15:12 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 18:12:30 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/10 20:49:07 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,4 @@ int	ft_printf(const char *fmt, ...)
 	}
 	va_end(args);
 	return (cnt);
-}
-
-int	main(int argc, char **argv)
-{
-	ft_printf(argv[1]);
-	return (0);
 }
