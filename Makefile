@@ -9,6 +9,7 @@ SRCS		:= print_str.c \
 				print_uint.c \
 				print_nbr.c \
 				print_hex.c \
+				print_char.c \
 				putchar_byte.c \
 				ft_printf.c
 
