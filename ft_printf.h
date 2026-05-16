@@ -6,12 +6,12 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:11:20 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 21:12:09 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:35:40 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <limits.h>
 # include <stdarg.h>

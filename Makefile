@@ -1,10 +1,10 @@
-NAME		:= libft.a
+NAME		:= libftprintf.a
 
 CFLAGS		:= -Wall -Wextra -Werror
 CPPFLAGS	:= -I.
 ARFLAGS		:= rcs
 
-SRCS		:= print_st.c \
+SRCS		:= print_str.c \
 				print_ptr.c \
 				print_uint.c \
 				print_nbr.c \

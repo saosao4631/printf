@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:16:38 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 19:24:08 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/16 19:35:59 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_strlen(const char *s)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (s[len])
