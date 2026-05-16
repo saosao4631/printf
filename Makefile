@@ -10,7 +10,7 @@ SRCS		:= print_str.c \
 				print_nbr.c \
 				print_hex.c \
 				putchar_byte.c \
-				ft_printf.c \
+				ft_printf.c
 
 OUTDIR		:= .out
 OBJS		:= $(addprefix $(OUTDIR)/, $(SRCS:.c=.o))
