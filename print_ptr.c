@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 20:02:55 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 21:01:37 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:49:11 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	print_ptr(void *p)
 	unsigned long	address;
 
 	if (!p)
-		return (putchar_byte("nil", 5));
+		return (putchar_byte("(nil)", 5));
 	address = (unsigned long)p;
 	s = &buf[18];
 	while (address)

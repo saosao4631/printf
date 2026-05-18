@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 19:18:04 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 19:26:33 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:46:44 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	putchar_byte(const char *s, int b)
 {
 	if (write(1, s, b) == -1)
-		return (1);
-	return (-1);
+		return (-1);
+	return (b);
 }
