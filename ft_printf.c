@@ -6,7 +6,7 @@
 /*   By: ksaotome <ksaotome@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 16:15:12 by ksaotome          #+#    #+#             */
-/*   Updated: 2026/05/10 20:49:07 by ksaotome         ###   ########.fr       */
+/*   Updated: 2026/05/23 19:25:59 by ksaotome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,25 @@
 
 static int	print_conversion_specifier(va_list *args, const char c)
 {
-	int	len;
-
-	len = 0;
 	if (c == 'c')
-		len = print_char(va_arg(*args, int));
-	else if (c == 's')
-		len = print_str(va_arg(*args, char *));
-	else if (c == 'p')
-		len = print_ptr(va_arg(*args, void *));
-	else if (c == 'd' || c == 'i')
-		len = print_nbr(va_arg(*args, int));
-	else if (c == 'u')
-		len = print_uint(va_arg(*args, unsigned int));
-	else if (c == 'x')
-		len = print_hex(va_arg(*args, unsigned int), "0123456789abcdef");
-	else if (c == 'X')
-		len = print_hex(va_arg(*args, unsigned int), "0123456789ABCDEF");
-	else if (c == '%')
-		len = print_char('%');
-	else if (c == '\0')
-		len = -1;
-	else
-		len = print_char(c);
-	return (len);
+		return (print_char(va_arg(*args, int)));
+	if (c == 's')
+		return (print_str(va_arg(*args, char *)));
+	if (c == 'p')
+		return (print_ptr(va_arg(*args, void *)));
+	if (c == 'd' || c == 'i')
+		return (print_nbr(va_arg(*args, int)));
+	if (c == 'u')
+		return (print_uint(va_arg(*args, unsigned int)));
+	if (c == 'x')
+		return (print_hex(va_arg(*args, unsigned int), "0123456789abcdef"));
+	if (c == 'X')
+		return (print_hex(va_arg(*args, unsigned int), "0123456789ABCDEF"));
+	if (c == '%')
+		return (print_char('%'));
+	if (c == '\0')
+		return (-1);
+	return (print_char(c));
 }
 
 int	ft_printf(const char *fmt, ...)
